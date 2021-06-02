@@ -12,6 +12,117 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+      <!-- customized bootstrap navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
       <h1>Browser Template</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- `Add Tour` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#add-tour" id="add-tour-btn">Add Tour</a>
+              </li>
+              <!-- `View All Tours` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#view-edit-delete" id="view-all-tours-btn">View All Tours</a>
+              </li>
+              <!-- `Change Password` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#change-password" id="change-pw-btn">Change Password</a>
+              </li>
+              <!-- `Sign Out` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#sign-out" type="submit" id="sign-out">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <!-- display messages -->
+        <div id="messages"></div>
+
+        <!-- sign up form -->
+          <form id="sign-up">
+            <h3>Sign Up</h3>
+            <label for="email">Email</label>
+            <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+            <label for="password">Password</label>
+            <input name="credentials[password]" type="password" placeholder="password" required>
+            <label for="password">Confirm Password</label>
+            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
+            <button type="submit" class="reg-button">Submit</button>
+          </form>
+
+          <!-- sign in form -->
+          <form id="sign-in">
+            <h3>Sign In</h3>
+            <label for="email">Email</label>
+            <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+            <label for="password">Password</label>
+            <input name="credentials[password]" type="password" placeholder="password" required>
+            <button type="submit" class="reg-button">Submit</button>
+          </form>
+
+        <!-- change password form -->
+        <form id="change-password">
+          <h3>Change Password</h3>
+          <br>
+          <label for="password">Old Password: </label>
+          <input type="password" name="passwords[old]" placeholder="old password" required>
+          <br>
+          <label for="password">New Password: </label>
+          <input type="password" name="passwords[new]" placeholder="new password" required>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- add tour form -->
+        <form id="add-tour">
+          <h3>Add Tour</h3>
+            <label for="tour[name]" class="form-label">Name</label>
+            <input type="text" name="tour[name]" id="tourName"  required>
+            <label for="tour[description]" class="form-label">Description</label>
+            <input type="text" name="tour[description]" id="tourDescription" required>
+            <label for="tour[date]" class="form-label">Date</label>
+            <input type="date" name="tour[date]" id="tourDate" required>
+            <button type="submit">Add Tour</button>
+        </form>
+
+        <div id="view-edit-delete">
+        <!-- edit tour form -->
+        <form id="edit-tour">
+          <h3>Edit Tour</h3>
+          <label for="tour[id]" class="form-label">ID</label>
+          <input type="text" name="tour[id]" placeholder="Enter ID" required>
+          <label for="tour[name]" class="form-label">Name</label>
+          <input type="text" name="tour[name]" placeholder="Enter Name" required>
+          <label for="tour[description]" class="form-label">Description</label>
+          <input type="text" name="tour[description]" placeholder="Enter Description" required>
+          <label for="tour[date]" class="form-label">Date</label>
+          <input type="date" name="tour[date]" required>
+          <button>Edit Tour</button>
+        </form>
+
+        <!-- delete tour form -->
+        <form id="delete-tour">
+          <h3>Delete Tour</h3>
+          <label for="tour[id]" class="form-label">ID</label>
+          <input type="text" name="tour[id]" placeholder="Enter ID" required>
+          <button>Delete Tour</button>
+        </form>
+
+        <!-- `view all tours` button -->
+        <button id="view-all-tours">View All Tours</button>
+
+        <!-- displays all tours -->
+        <div id="display-tours"></div>
+        </div>
     </body>
 </html>
