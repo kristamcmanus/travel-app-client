@@ -1,1 +1,84 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+// positioning of forms, display messages, and all tours
+form, #view-all-tours, #display-tours, #messages {
+  display: grid;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+// background image
+img {
+  background: url(public/sign-up-in-img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  opacity: 0.5;
+  z-index: -1;
+  top: -10px;
+}
+
+// input fields in forms
+input {
+  padding: 0 100px 0 5px;
+  border-radius: 5px;
+  margin-top: -8px;
+  line-height: 30px;
+  outline: none;
+  background-color: rgba(255,255,255,0.8)
+}
+
+// links in navbar
+.nav-link {
+  margin-left: 20px;
+  color: #2A2A2A;
+  font-size: 18px;
+}
+
+// navbar
+.navbar {
+  background-color: transparent;
+}
+
+// buttons
+button {
+	color: #000;
+	background-color: transparent;
+	border: 2px solid #313131;
+	border-radius: 5px;
+	padding: 8px 28px;
+  margin-top: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #313131;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
+	&:hover {
+		box-shadow: inset 400px 0 0 0 #313131;
+    color: #FFF;
+	}
+}
+
+// displays ALL logged tours
+#display-tours {
+  font-size: 18px;
+}
+
+// individual logged tours
+.tour-item {
+  border: 2px solid #313131;
+  margin: 5px;
+  padding: 8px 8px 0px 8px;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
+}
