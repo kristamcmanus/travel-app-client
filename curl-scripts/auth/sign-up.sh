@@ -1,6 +1,6 @@
 # VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
 
-curl "http://localhost:4741/posts" \
+curl "http://localhost:4741/tours" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
