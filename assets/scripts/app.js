@@ -36,6 +36,7 @@ $(() => {
   $('#delete-tour').hide()
   $('#delete-tour').on('submit', tourEvents.onDeleteTour)
   $('#display-tours').on('click', tourEvents.onViewAllToursSuccess)
+  $('#display-tours').on('click', tourEvents.onDeleteTourSuccess)
   $('#change-pw-btn').on('click', tourEvents.onChangePwBtn)
 
 })

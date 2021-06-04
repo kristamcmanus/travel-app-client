@@ -32,6 +32,10 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#view-edit-delete" id="view-all-tours-btn">View All Tours</a>
               </li>
+              <!-- `My Reservations` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#my-reservations" id="my reservations-btn">My Reservations</a>
+              </li>
               <!-- `Change Password` link in navbar -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#change-password" id="change-pw-btn">Change Password</a>
@@ -89,15 +93,24 @@
             <label for="tour[name]" class="form-label">Name</label>
             <input type="text" name="tour[name]" id="tourName" required>
             <label for="tour[description]" class="form-label">Description</label>
-            <input type="text" name="tour[description]" id="tourDescription" required>
+            <textarea name="tour[description]" id="tourDescription" rows="4" cols="50" required></textarea>
+            <label for="tour[image]" class="form-label">Choose an Image:</label>
+            <input type="file" id="image" name="tour[image]" id="tourImage" accept="image/png, image/jpeg">
             <label for="tour[date]" class="form-label">Date</label>
             <input type="date" name="tour[date]" id="tourDate" required>
             <button type="submit">Add Tour</button>
         </form>
 
-        <div id="view-edit-delete">
+        <div id="view-edit-delete"></div>
+
+        <!-- `view all tours` button -->
+        <button id="view-all-tours">View All Tours</button>
+
+        <!-- displays all tours -->
+        <div id="display-tours"></div>
+
         <!-- edit tour form -->
-        <form id="edit-tour">
+        <!-- <form id="edit-tour">
           <h3>Edit Tour</h3>
           <label for="tour[id]" class="form-label">ID</label>
           <input type="text" name="tour[id]" placeholder="Enter ID" required>
@@ -108,22 +121,68 @@
           <label for="tour[date]" class="form-label">Date</label>
           <input type="date" name="tour[date]" required>
           <button>Edit Tour</button>
-        </form>
+        </form> -->
 
         <!-- delete tour form -->
-        <form id="delete-tour">
+        <!-- <form id="delete-tour">
           <h3>Delete Tour</h3>
           <label for="tour[id]" class="form-label">ID</label>
           <input type="text" name="tour[id]" placeholder="Enter ID" required>
           <button>Delete Tour</button>
-        </form>
+        </form> -->
 
-        <!-- `view all tours` button -->
-        <button id="view-all-tours">View All Tours</button>
+        <!-- Bootstrap cards -->
+        <!-- <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
 
-        <!-- displays all tours -->
-        <div id="display-tours"></div>
-        </div>
+        <!-- Bootstrap cards -->
+        <!-- <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a short card.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
 
     </body>
 </html>

@@ -27,11 +27,20 @@ const onEditTour = function (event) {
     .catch(ui.onError)
 }
 
+// const onDeleteTour = function (event) {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   const id = formData.tour.id
+//   // const id = $(event.target).data('id')
+//   api.deleteTour(id)
+//     .then(ui.onDeleteTourSuccess)
+//     .catch(ui.onError)
+// }
+
 const onDeleteTour = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  const id = formData.tour.id
+  const id = $(event.target).data("id")
   api.deleteTour(id)
     .then(ui.onDeleteTourSuccess)
     .catch(ui.onError)
@@ -40,7 +49,7 @@ const onDeleteTour = function (event) {
 const onViewAllTours = function () {
   event.preventDefault()
   api.viewAllTours()
-    .then(ui.onViewAllToursuccess)
+    .then(ui.onViewAllToursSuccess)
     .catch(ui.onError)
 }
 

@@ -36,12 +36,22 @@ const onViewAllToursSuccess = function (response) {
   let toursHtml = ''
   tours.forEach(tour => {
     toursHtml += `
-      <div class="tour-item">
-        <p>ID: ${tour._id}</p>
-        <p>Name: ${tour.name}</p>
-        <p>Description: ${tour.description}</p>
-        <p>Date: ${tour.date}</p>
-      </div>
+    <div class="card-container">
+       <div class="col">
+         <div class="card h-100">
+          <img src=${tour.image} class="card-img-top" alt="...">
+           <div class="card-body">
+             <h5 class="card-title">Name: ${tour.name}</h5>
+             <p class="card-text">Description: ${tour.description}</p>
+             <p>Date: ${tour.date}</p>
+             <p>ID: ${tour._id}</p>
+             <button class="edit-tour btn-primary">Edit</button>
+             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour btn-primary">Book</button>
+           </div>
+         </div>
+       </div>
+    </div>
     `
     $('#display-tours').html(toursHtml)
     // displays messaging for when viewing all tours is successful
@@ -51,6 +61,41 @@ const onViewAllToursSuccess = function (response) {
     $('#messages').text('Nice! You can now view all your tours.')
   })
 }
+
+// <button class="delete-tour btn" id="delete-tour" data-id=${tour._id}>Delete</button>
+// displays all tours recorded
+// const onViewAllToursSuccess = function (response) {
+//   const tours = response.tours
+//   let toursHtml = ''
+//   tours.forEach(tour => {
+//     toursHtml += `
+//       <div class="card">
+//         <p>ID: ${tour._id}</p>
+//         <p>Name: ${tour.name}</p>
+//         <p>Description: ${tour.description}</p>
+//         <p>Date: ${tour.date}</p>
+//       </div>
+//     `
+//     $('#display-tours').html(toursHtml)
+//     // displays messaging for when viewing all tours is successful
+//     setTimeout(() => {
+//       $('#messages').text('')
+//     }, 3000)
+//     $('#messages').text('Nice! You can now view all your tours.')
+//   })
+// }
+
+// <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
+//   <div class="col">
+//     <div class="card h-100">
+//       <div class="card-body">
+//         <h5 class="card-title">Card title</h5>
+//         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+//         <a href="#" class="btn btn-primary">Go somewhere</a>
+//       </div>
+//     </div>
+//   </div>
+// </div>
 
 // displays error message
 const onError = function (err) {
