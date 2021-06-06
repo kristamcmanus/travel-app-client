@@ -34,7 +34,7 @@ $(() => {
   $('#edit-tour').hide()
   $('#edit-tour').on('submit', tourEvents.onEditTour)
   $('#display-tours').on('click', '#edit-tour', tourEvents.onEditTour)
-  $('edit-tour').on('click', '#edit-tour-btn', tourEvents.onEditTour)
+  $('edit-tour-btn').on('click', tourEvents.onEditTour)
   $('#edit-tour').hide()
   $('#edit-tour').on('click', '#edit-tour-btn', tourEvents.onEditTour)
   $('#delete-tour').hide()
