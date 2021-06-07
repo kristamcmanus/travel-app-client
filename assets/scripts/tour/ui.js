@@ -36,19 +36,73 @@ const onViewAllToursSuccess = function (response) {
   let toursHtml = ''
   tours.forEach(tour => {
     toursHtml += `
-      <div class="tour-item">
-        <p>ID: ${tour._id}</p>
-        <p>Name: ${tour.name}</p>
-        <p>Description: ${tour.description}</p>
-        <p>Date: ${tour.date}</p>
-      </div>
+    <div class="card-container">
+       <div class="col">
+         <div class="card h-100">
+           <div class="card-body">
+            <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
+             <h5 class="card-title">${tour.city}</h5>
+             <p class="card-text">${tour.description}</p>
+             <p>Date: ${tour.date}</p>
+             <p>Host: ${tour.host}</p>
+             <button class="btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
+             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour-btn btn-primary">Book</button>
+             <form class="edit-tour" data-id=${tour._id}>
+                <input name="tour[city]" type="text" placeholder="${tour.city}">
+                <input name="tour[description]" type="text" placeholder="${tour.description}">
+                <input name="tour[host]" type="text" placeholder="${tour.host}">
+                <input name="tour[date]" type="text" placeholder="${tour.date}">
+                <input name="tour[image]" type="url" class="tourImageUrl" placeholder=${tour.image}>
+                <button type="submit" value="Update Tour">Update</button>
+              </form>
+           </div>
+         </div>
+       </div>
+    </div>
     `
     $('#display-tours').html(toursHtml)
+    $('.edit-tour').hide()
+
     // displays messaging for when viewing all tours is successful
     setTimeout(() => {
       $('#messages').text('')
-    }, 3000)
-    $('#messages').text('Nice! You can now view all your tours.')
+      }, 3000)
+      $('#messages').text('Nice! You can now view all your tours.')
+      $('form').trigger('reset')
+  })
+}
+
+// displays booked reservations
+const onMyReservationsSuccess = function (response) {
+  const tours = response.tours
+  let toursHtml = ''
+  tours.forEach(tour => {
+    toursHtml += `
+    <div class="card-container">
+       <div class="col">
+         <div class="card h-100">
+           <div class="card-body">
+            <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
+             <h5 class="card-title">${tour.city}</h5>
+             <p class="card-text">${tour.description}</p>
+             <input name="tour[host]" type="text" placeholder="${tour.host}">
+             <p>Date: ${tour.date}</p>
+             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour btn-primary">Book</button>
+           </div>
+         </div>
+       </div>
+    </div>
+    `
+    $('#my-reservations').html(toursHtml)
+    $('#display-tours').hide()
+    // displays messaging for when viewing all tours is successful
+    setTimeout(() => {
+      $('#messages').text('')
+      }, 3000)
+      $('#messages').text('Nice! You can now view all your reservations.')
+      $('form').trigger('reset')
   })
 }
 
@@ -65,5 +119,6 @@ module.exports = {
   onEditTourSuccess,
   onDeleteTourSuccess,
   onViewAllToursSuccess,
+  onMyReservationsSuccess,
   onError
 }

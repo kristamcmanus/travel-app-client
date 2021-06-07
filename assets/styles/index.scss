@@ -6,26 +6,68 @@
 	padding: 0;
 }
 
-// positioning of forms, display messages, and all tours
-form, #view-all-tours, #display-tours, #messages {
-  display: grid;
-  justify-content: center;
-  margin: 40px auto;
-}
-
-// background image
-img {
-  background: url(public/sign-up-in-img.jpg) no-repeat center center fixed;
+#bg-img {
+  background: url(public/images/bg-img.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: fixed;
   width: 100%;
-  opacity: 0.5;
+  height: auto;
+  opacity: 0.4;
   z-index: -1;
   top: -10px;
 }
+
+// positioning of forms, display messages, and all tours
+form, #view-all-tours, #messages {
+  display: grid;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.card-container {
+  display: inline-block;
+
+  /* Then we define the flow direction
+     and if we allow the items to wrap
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  // justify-content: space-around;
+  margin: 10px auto;
+  width: 33%;
+}
+
+.card {
+  width: 100%;
+  background-color: #F8FAFE;
+}
+
+img {
+  height: 250px;
+  width: 400px;
+}
+
+// .element {
+//   // Three columns to start
+//   @include row-cols(3);
+//
+//   // Five columns from medium breakpoint up
+//   @include media-breakpoint-up(md) {
+//     @include row-cols(5);
+//   }
+// }
+
+// .row {
+//   justify-content: flex-start;
+// }
+
 
 // input fields in forms
 input {
@@ -69,16 +111,21 @@ button {
 	}
 }
 
+// .btn-primary {
+// 	display: inline;
+// 	justify-content: space-around;
+// }
+
 // displays ALL logged tours
-#display-tours {
-  font-size: 18px;
-}
+// #display-tours {
+//   font-size: 16px;
+// }
 
 // individual logged tours
-.tour-item {
-  border: 2px solid #313131;
-  margin: 5px;
-  padding: 8px 8px 0px 8px;
-  border-radius: 5px;
-  background-color: rgba(255,255,255,0.5);
-}
+// .card {
+//   border: 2px solid #313131;
+//   margin: 5px;
+//   padding: 8px 8px 0px 8px;
+//   border-radius: 5px;
+//   background-color: rgba(255,255,255,0.5);
+// }
