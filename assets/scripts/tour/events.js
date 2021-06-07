@@ -17,15 +17,35 @@ const onAddTour = function (event) {
     .catch(ui.onError)
 }
 
+// edit tour button
+const onEditTourBtn = function (event) {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  const displayUpdateForm = $(`.edit-tour[data-id=${id}]`)
+  // $('.delete-tour').hide()
+  // $('#edit-tour-btn').hide()
+  displayUpdateForm.show()
+}
+
 const onEditTour = function (event) {
   event.preventDefault()
+  const id = $(event.target).data('id')
   const form = event.target
   const formData = getFormFields(form)
-  const id = formData.tour.id
   api.editTour(id, formData)
     .then(ui.onEditTourSuccess)
     .catch(ui.onError)
 }
+
+// const onEditTour = function (event) {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   const id = formData.tour.id
+//   api.editTour(id, formData)
+//     .then(ui.onEditTourSuccess)
+//     .catch(ui.onError)
+// }
 
 // const onDeleteTour = function (event) {
 //   event.preventDefault()
@@ -50,6 +70,13 @@ const onViewAllTours = function () {
   event.preventDefault()
   api.viewAllTours()
     .then(ui.onViewAllToursSuccess)
+    .catch(ui.onError)
+}
+
+const onMyReservations = function () {
+  event.preventDefault()
+  api.myReservations()
+    .then(ui.onMyReservationsSuccess)
     .catch(ui.onError)
 }
 
@@ -81,12 +108,26 @@ const onViewAllToursBtn = function (event) {
   $('#add-tour').hide()
 }
 
+// my reservations link in navbar displays reservations on page
+const onMyReservationsBtn = function (event) {
+  $('#my-reservations').show()
+  $('#add-tour').hide()
+  $('#change-password').hide()
+  $('#display-tours').hide()
+  $('#view-edit-delete').hide()
+  $('#view-all-tours').hide()
+}
+
+
 module.exports = {
   onAddTour,
+  onEditTourBtn,
   onEditTour,
   onDeleteTour,
   onViewAllTours,
   onChangePwBtn,
   onAddTourBtn,
-  onViewAllToursBtn
+  onViewAllToursBtn,
+  onMyReservations,
+  onMyReservationsBtn
 }

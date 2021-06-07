@@ -39,18 +39,19 @@ const onViewAllToursSuccess = function (response) {
     <div class="card-container">
        <div class="col">
          <div class="card h-100">
-          <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
            <div class="card-body">
-             <h5 class="card-title">Name: ${tour.name}</h5>
-             <p class="card-text">Description: ${tour.description}</p>
+            <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
+             <h5 class="card-title">${tour.city}</h5>
+             <p class="card-text">${tour.description}</p>
              <p>Date: ${tour.date}</p>
-             <p>ID: ${tour._id}</p>
-             <button class="edit-tour btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
+             <p>Host: ${tour.host}</p>
+             <button class="btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
              <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
-             <button class="book-tour btn-primary">Book</button>
-             <form class="edit-tour" id="edit-tour" data-id=${tour._id}>
-                <input name="tour[name]" type="text" placeholder="${tour.name}">
+             <button class="book-tour-btn btn-primary">Book</button>
+             <form class="edit-tour" data-id=${tour._id}>
+                <input name="tour[city]" type="text" placeholder="${tour.city}">
                 <input name="tour[description]" type="text" placeholder="${tour.description}">
+                <input name="tour[host]" type="text" placeholder="${tour.host}">
                 <input name="tour[date]" type="text" placeholder="${tour.date}">
                 <input name="tour[image]" type="url" class="tourImageUrl" placeholder=${tour.image}>
                 <button type="submit" value="Update Tour">Update</button>
@@ -61,48 +62,49 @@ const onViewAllToursSuccess = function (response) {
     </div>
     `
     $('#display-tours').html(toursHtml)
+    $('.edit-tour').hide()
+
     // displays messaging for when viewing all tours is successful
     setTimeout(() => {
       $('#messages').text('')
-    }, 3000)
-    $('#messages').text('Nice! You can now view all your tours.')
+      }, 3000)
+      $('#messages').text('Nice! You can now view all your tours.')
+      $('form').trigger('reset')
   })
 }
 
-// <button class="delete-tour btn" id="delete-tour" data-id=${tour._id}>Delete</button>
-// displays all tours recorded
-// const onViewAllToursSuccess = function (response) {
-//   const tours = response.tours
-//   let toursHtml = ''
-//   tours.forEach(tour => {
-//     toursHtml += `
-//       <div class="card">
-//         <p>ID: ${tour._id}</p>
-//         <p>Name: ${tour.name}</p>
-//         <p>Description: ${tour.description}</p>
-//         <p>Date: ${tour.date}</p>
-//       </div>
-//     `
-//     $('#display-tours').html(toursHtml)
-//     // displays messaging for when viewing all tours is successful
-//     setTimeout(() => {
-//       $('#messages').text('')
-//     }, 3000)
-//     $('#messages').text('Nice! You can now view all your tours.')
-//   })
-// }
-
-// <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
-//   <div class="col">
-//     <div class="card h-100">
-//       <div class="card-body">
-//         <h5 class="card-title">Card title</h5>
-//         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-//         <a href="#" class="btn btn-primary">Go somewhere</a>
-//       </div>
-//     </div>
-//   </div>
-// </div>
+// displays booked reservations
+const onMyReservationsSuccess = function (response) {
+  const tours = response.tours
+  let toursHtml = ''
+  tours.forEach(tour => {
+    toursHtml += `
+    <div class="card-container">
+       <div class="col">
+         <div class="card h-100">
+           <div class="card-body">
+            <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
+             <h5 class="card-title">${tour.city}</h5>
+             <p class="card-text">${tour.description}</p>
+             <input name="tour[host]" type="text" placeholder="${tour.host}">
+             <p>Date: ${tour.date}</p>
+             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour btn-primary">Book</button>
+           </div>
+         </div>
+       </div>
+    </div>
+    `
+    $('#my-reservations').html(toursHtml)
+    $('#display-tours').hide()
+    // displays messaging for when viewing all tours is successful
+    setTimeout(() => {
+      $('#messages').text('')
+      }, 3000)
+      $('#messages').text('Nice! You can now view all your reservations.')
+      $('form').trigger('reset')
+  })
+}
 
 // displays error message
 const onError = function (err) {
@@ -117,5 +119,6 @@ module.exports = {
   onEditTourSuccess,
   onDeleteTourSuccess,
   onViewAllToursSuccess,
+  onMyReservationsSuccess,
   onError
 }

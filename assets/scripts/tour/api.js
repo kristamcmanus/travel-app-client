@@ -46,9 +46,20 @@ const viewAllTours = function () {
   })
 }
 
+const myReservations = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/my-reservations',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addTour,
   editTour,
   deleteTour,
-  viewAllTours
+  viewAllTours,
+  myReservations
 }

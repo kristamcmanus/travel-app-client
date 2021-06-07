@@ -27,6 +27,8 @@ const onSignInSuccess = function (response) {
   $('#view-all-tours').show()
   $('#display-tours').show()
   $('#view-edit-delete').show()
+  $('#my-reservations').show()
+  $('#bg-img').hide()
 }
 
 const onChangePasswordSuccess = function () {
@@ -54,6 +56,8 @@ const onSignOutSuccess = function () {
   $('#display-tours').hide()
   $('#display-tours').empty()
   $('.navbar').hide()
+  $('#my-reservations').hide()
+  $('#bg-img').show()
   store.user = null
 }
 

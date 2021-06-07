@@ -6,6 +6,20 @@
 	padding: 0;
 }
 
+#bg-img {
+  background: url(public/images/bg-img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+  z-index: -1;
+  top: -10px;
+}
+
 // positioning of forms, display messages, and all tours
 form, #view-all-tours, #messages {
   display: grid;
@@ -32,6 +46,12 @@ form, #view-all-tours, #messages {
 
 .card {
   width: 100%;
+  background-color: #F8FAFE;
+}
+
+img {
+  height: 250px;
+  width: 400px;
 }
 
 // .element {
