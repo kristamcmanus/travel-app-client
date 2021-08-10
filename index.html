@@ -93,14 +93,16 @@
         <!-- add tour form -->
         <form id="add-tour">
           <h3>Add Tour</h3>
-            <label for="tour[city]" class="form-label">Name</label>
-            <input type="text" name="tour[city]" id="tourCity" required>
+            <label for="tour[city]" class="form-label">City</label>
+            <input type="text" name="tour[city]" id="tour-city" required>
             <label for="tour[description]" class="form-label">Description</label>
-            <textarea name="tour[description]" id="tourDescription" rows="4" cols="50" required></textarea>
+            <textarea name="tour[description]" id="tour-description" rows="4" cols="50" required></textarea>
             <label for="tour[date]" class="form-label">Date</label>
-            <input type="date" name="tour[date]" id="tourDate" required>
+            <input type="date" name="tour[date]" id="tour-date" required>
             <label for="tour[host]" class="form-label">Host</label>
-            <input type="text" name="tour[host]" id="tourHost" required>
+            <input type="text" name="tour[host]" id="tour-host" required>
+            <label for="tour[price]" class="form-label">Price</label>
+            <input type="text" name="tour[price]" id="tour-price" required>
             <label for="tour[image]" class="form-label">Choose an Image</label>
             <input type="url" name="tour[image]" id="tour-image">
             <button type="submit">Add Tour</button>

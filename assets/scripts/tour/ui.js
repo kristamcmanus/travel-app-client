@@ -45,15 +45,17 @@ const onViewAllToursSuccess = function (response) {
              <p class="card-text">${tour.description}</p>
              <p>Date: ${tour.date}</p>
              <p>Host: ${tour.host}</p>
-             <button class="btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
-             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
-             <button class="book-tour-btn btn-primary">Book</button>
+             <p>Price: ${tour.price}</p>
+             <button id="edit-tour-btn" data-id=${tour._id}>Edit</button>
+             <button class="delete-tour" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour-btn">Book</button>
              <form class="edit-tour" data-id=${tour._id}>
                 <input name="tour[city]" type="text" placeholder="${tour.city}">
                 <input name="tour[description]" type="text" placeholder="${tour.description}">
                 <input name="tour[host]" type="text" placeholder="${tour.host}">
                 <input name="tour[date]" type="text" placeholder="${tour.date}">
-                <input name="tour[image]" type="url" class="tourImageUrl" placeholder=${tour.image}>
+                <input name="tour[price]" type="text" placeholder="${tour.price}">
+                <input name="tour[image]" type="url" placeholder=${tour.image}>
                 <button type="submit" value="Update Tour">Update</button>
               </form>
            </div>
