@@ -56,5 +56,6 @@ $(() => {
   $('#my-reservations').hide()
   $('#my-reservations').on('submit', tourEvents.onMyReservations)
   $('#my-reservations-btn').on('click', tourEvents.onMyReservationsBtn)
+  $('#res-message').hide()
 
 })

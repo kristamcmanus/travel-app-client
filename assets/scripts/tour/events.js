@@ -111,6 +111,7 @@ const onViewAllToursBtn = function (event) {
 // my reservations link in navbar displays reservations on page
 const onMyReservationsBtn = function (event) {
   $('#my-reservations').show()
+  $('#res-message').show()
   $('#add-tour').hide()
   $('#change-password').hide()
   $('#display-tours').hide()
