@@ -43,19 +43,19 @@ const onViewAllToursSuccess = function (response) {
             <img src="${tour.image}" class="card-img-top" alt="${tour.name}">
              <h5 class="card-title">${tour.city}</h5>
              <p class="card-text">${tour.description}</p>
-             <p>Date: ${tour.date}</p>
              <p>Host: ${tour.host}</p>
+             <p>Date: ${tour.date}</p>
              <p>Price: ${tour.price}</p>
-             <button id="edit-tour-btn" data-id=${tour._id}>Edit</button>
-             <button class="delete-tour" id="delete-tour" data-id=${tour._id}>Delete</button>
-             <button class="book-tour-btn">Book</button>
+             <button class="btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
+             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour-btn btn-primary">Book</button>
              <form class="edit-tour" data-id=${tour._id}>
                 <input name="tour[city]" type="text" placeholder="${tour.city}">
                 <input name="tour[description]" type="text" placeholder="${tour.description}">
                 <input name="tour[host]" type="text" placeholder="${tour.host}">
                 <input name="tour[date]" type="text" placeholder="${tour.date}">
                 <input name="tour[price]" type="text" placeholder="${tour.price}">
-                <input name="tour[image]" type="url" placeholder=${tour.image}>
+                <input name="tour[image]" type="url" class="tourImageUrl" placeholder=${tour.image}>
                 <button type="submit" value="Update Tour">Update</button>
               </form>
            </div>
