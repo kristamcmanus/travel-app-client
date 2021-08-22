@@ -87,6 +87,7 @@ const onChangePwBtn = function (event) {
   $('#display-tours').hide()
   $('#view-edit-delete').hide()
   $('#view-all-tours').hide()
+  $('#res-message').hide()
 }
 
 // add tour link in navbar displays `add tour` form on page
@@ -96,6 +97,7 @@ const onAddTourBtn = function (event) {
   $('#display-tours').hide()
   $('#view-edit-delete').hide()
   $('#view-all-tours').hide()
+  $('#res-message').hide()
 }
 
 // view all onAddTours link in navbar displays edit and delete forms and view all
@@ -106,6 +108,7 @@ const onViewAllToursBtn = function (event) {
   $('#display-tours').show()
   $('#change-password').hide()
   $('#add-tour').hide()
+  $('#res-message').hide()
 }
 
 // my reservations link in navbar displays reservations on page
