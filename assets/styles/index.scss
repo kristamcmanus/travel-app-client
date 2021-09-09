@@ -1,0 +1,132 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#bg-img {
+  background: url(public/images/bg-img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+  z-index: -1;
+  top: -10px;
+}
+
+h1 {
+  font-family: 'Crete Round', serif;
+  color: rgb(255, 137, 74);
+}
+
+// .reg-forms {
+//   display: inline-block;
+// }
+
+// positioning of forms, display messages, and all tours
+form, #view-all-tours, #messages, #res-message {
+  display: grid;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.card-container {
+  display: inline-block;
+  flex-flow: row wrap;
+  margin: 10px auto;
+  width: 33%;
+}
+
+.card {
+  width: 100%;
+  background-color: #F8FAFE;
+  box-shadow: 10px 5px 5px gray;
+}
+
+img {
+  height: 300px;
+  width: auto;
+}
+
+// .element {
+//   // Three columns to start
+//   @include row-cols(3);
+//
+//   // Five columns from medium breakpoint up
+//   @include media-breakpoint-up(md) {
+//     @include row-cols(5);
+//   }
+// }
+
+// .row {
+//   justify-content: flex-start;
+// }
+
+
+// input fields in forms
+input {
+  padding: 0 100px 0 5px;
+  border-radius: 5px;
+  margin-top: -8px;
+  line-height: 30px;
+  outline: none;
+  background-color: rgba(255,255,255,0.8)
+}
+
+// links in navbar
+.nav-link {
+  margin-left: 20px;
+  color: rgb(255, 137, 74);
+  font-size: 18px;
+}
+
+// navbar
+.navbar {
+  background-color: transparent;
+}
+
+// buttons
+button {
+	color: #000;
+	background-color: transparent;
+	border: 2px solid #313131;
+	border-radius: 5px;
+	padding: 8px 28px;
+  margin-top: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #313131;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
+	&:hover {
+		box-shadow: inset 400px 0 0 0 #313131;
+    color: #FFF;
+	}
+}
+
+// .btn-primary {
+// 	display: inline;
+// 	justify-content: space-around;
+// }
+
+// displays ALL logged tours
+// #display-tours {
+//   font-size: 16px;
+// }
+
+// individual logged tours
+// .card {
+//   border: 2px solid #313131;
+//   margin: 5px;
+//   padding: 8px 8px 0px 8px;
+//   border-radius: 5px;
+//   background-color: rgba(255,255,255,0.5);
+// }

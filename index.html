@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>TripIt</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <!-- background image -->
+      <img id="bg-img" src="public/images/bg-img.jpg" alt="friends at restaurant">
+
+      <!-- customized bootstrap navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+      <h1>TripIt</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- `Add Tour` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#add-tour" id="add-tour-btn">Add Tour</a>
+              </li>
+              <!-- `View All Tours` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#view-edit-delete" id="view-all-tours-btn">View All Tours</a>
+              </li>
+              <!-- `My Reservations` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#my-reservations" id="my-reservations-btn">My Reservations</a>
+              </li>
+              <!-- `Change Password` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#change-password" id="change-pw-btn">Change Password</a>
+              </li>
+              <!-- `Sign Out` link in navbar -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#sign-out" type="submit" id="sign-out">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <!-- display messages -->
+        <div id="messages"></div>
+
+        <!-- sign up form -->
+          <form id="sign-up" class="reg-forms">
+            <h3>Sign Up</h3>
+            <label for="email">Email</label>
+            <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+            <label for="password">Password</label>
+            <input name="credentials[password]" type="password" placeholder="password" required>
+            <label for="password">Confirm Password</label>
+            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
+            <button type="submit" class="reg-button">Submit</button>
+          </form>
+
+          <!-- sign in form -->
+          <form id="sign-in" class="reg-forms">
+            <h3>Sign In</h3>
+            <label for="email">Email</label>
+            <input name="credentials[email]" type="email" placeholder="jdoe@gmail.com" required>
+            <label for="password">Password</label>
+            <input name="credentials[password]" type="password" placeholder="password" required>
+            <button type="submit" class="reg-button">Submit</button>
+          </form>
+
+        <!-- change password form -->
+        <form id="change-password">
+          <h3>Change Password</h3>
+          <br>
+          <label for="password">Old Password: </label>
+          <input type="password" name="passwords[old]" placeholder="old password" required>
+          <br>
+          <label for="password">New Password: </label>
+          <input type="password" name="passwords[new]" placeholder="new password" required>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- add tour form -->
+        <form id="add-tour">
+          <h3>Add Tour</h3>
+            <label for="tour[city]" class="form-label">City</label>
+            <input type="text" name="tour[city]" id="tour-city" required>
+            <label for="tour[description]" class="form-label">Description</label>
+            <textarea name="tour[description]" id="tourDescription" rows="4" cols="50" required></textarea>
+            <label for="tour[host]" class="form-label">Host</label>
+            <input type="text" name="tour[host]" id="tourHost" required>
+            <label for="tour[date]" class="form-label">Date</label>
+            <input type="date" name="tour[date]" id="tourDate" required>
+            <label for="tour[price]" class="form-label">Price</label>
+            <input type="text" name="tour[price]" id="tourPrice" required>
+            <label for="tour[image]" class="form-label">Choose an Image</label>
+            <input type="url" name="tour[image]" id="tour-image">
+            <button type="submit">Add Tour</button>
+        </form>
+
+        <div id="view-edit-delete"></div>
+
+        <!-- `view all tours` button -->
+        <button id="view-all-tours">View All Tours</button>
+
+        <!-- displays all tours -->
+        <div id="display-tours"></div>
+
+        <!-- display all reservations booked by clicking the `book` button -->
+        <div id="my-reservations"></div>
+        <p id="res-message">View all your reservations here.</p>
+
+    </body>
+</html>
