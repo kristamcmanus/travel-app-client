@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -20,6 +21,15 @@
   top: -10px;
 }
 
+h1 {
+  font-family: 'Crete Round', serif;
+  color: rgb(255, 137, 74);
+}
+
+// .reg-forms {
+//   display: inline-block;
+// }
+
 // positioning of forms, display messages, and all tours
 form, #view-all-tours, #messages, #res-message {
   display: grid;
@@ -29,17 +39,7 @@ form, #view-all-tours, #messages, #res-message {
 
 .card-container {
   display: inline-block;
-
-  /* Then we define the flow direction
-     and if we allow the items to wrap
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
   flex-flow: row wrap;
-
-  /* Then we define how is distributed the remaining space */
-  // justify-content: space-around;
   margin: 10px auto;
   width: 33%;
 }
@@ -47,6 +47,7 @@ form, #view-all-tours, #messages, #res-message {
 .card {
   width: 100%;
   background-color: #F8FAFE;
+  box-shadow: 10px 5px 5px gray;
 }
 
 img {
@@ -82,7 +83,7 @@ input {
 // links in navbar
 .nav-link {
   margin-left: 20px;
-  color: #2A2A2A;
+  color: rgb(255, 137, 74);
   font-size: 18px;
 }
 
