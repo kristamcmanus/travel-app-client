@@ -23,7 +23,8 @@
 
 h1 {
   font-family: 'Crete Round', serif;
-  color: rgb(255, 137, 74);
+	font-weight: bold;
+  color: #F06A27;
 }
 
 // .reg-forms {
@@ -83,14 +84,17 @@ input {
 // links in navbar
 .nav-link {
   margin-left: 20px;
-  color: rgb(255, 137, 74);
+  color: #F06A27;
   font-size: 18px;
+  &:hover {
+		color: #D35900;
+	}
 }
 
 // navbar
-.navbar {
-  background-color: transparent;
-}
+// .navbar {
+//   background-color: transparent;
+// }
 
 // buttons
 button {
@@ -102,13 +106,27 @@ button {
   margin-top: 5px;
 	font-size: 14px;
 	cursor: pointer;
-	box-shadow: inset 0 0 0 0 #313131;
-	-webkit-transition: ease-out 0.4s;
-	-moz-transition: ease-out 0.4s;
-	transition: ease-out 0.4s;
+	// box-shadow: inset 0 0 0 0 #313131;
+	// -webkit-transition: ease-out 0.4s;
+	// -moz-transition: ease-out 0.4s;
+	// transition: ease-out 0.4s;
 	&:hover {
 		box-shadow: inset 400px 0 0 0 #313131;
     color: #FFF;
+	}
+}
+
+.card-btn {
+  color: #fff;
+	background-color: #F06A27;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 28px;
+  margin-top: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	&:hover {
+		box-shadow: inset 400px 0 0 0 #D35900;
 	}
 }
 

@@ -19,16 +19,15 @@ const onSignInSuccess = function (response) {
   }, 3000)
   $('#sign-out').show()
   $('.navbar').show()
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('#sign-in').trigger('reset')
   $('#edit-tour').show()
   $('#delete-tour').show()
-  $('#view-all-tours').show()
   $('#display-tours').show()
   $('#view-edit-delete').show()
   $('#my-reservations').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
   $('#bg-img').hide()
+  $('#sign-in').trigger('reset')
 }
 
 const onChangePasswordSuccess = function () {
@@ -51,7 +50,6 @@ const onSignOutSuccess = function () {
   $('#add-tour').hide()
   $('#edit-tour').hide()
   $('#delete-tour').hide()
-  $('#view-all-tours').hide()
   $('#view-edit-delete').hide()
   $('#display-tours').hide()
   $('#display-tours').empty()

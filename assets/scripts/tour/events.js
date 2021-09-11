@@ -104,7 +104,6 @@ const onAddTourBtn = function (event) {
 // onAddTours button and logged onAddTours
 const onViewAllToursBtn = function (event) {
   $('#view-edit-delete').show()
-  $('#view-all-tours').show()
   $('#display-tours').show()
   $('#change-password').hide()
   $('#add-tour').hide()
@@ -119,7 +118,6 @@ const onMyReservationsBtn = function (event) {
   $('#change-password').hide()
   $('#display-tours').hide()
   $('#view-edit-delete').hide()
-  $('#view-all-tours').hide()
 }
 
 

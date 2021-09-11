@@ -46,9 +46,9 @@ const onViewAllToursSuccess = function (response) {
              <p>Host: ${tour.host}</p>
              <p>Date: ${tour.date}</p>
              <p>Price: ${tour.price}</p>
-             <button class="btn-primary" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
-             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
-             <button class="book-tour-btn btn-primary">Book</button>
+             <button class="card-btn" id="edit-tour-btn" data-id=${tour._id}>Edit</button>
+             <button class="delete-tour card-btn" id="delete-tour" data-id=${tour._id}>Delete</button>
+             <button class="book-tour-btn card-btn">Book</button>
              <form class="edit-tour" data-id=${tour._id}>
                 <input name="tour[city]" type="text" placeholder="${tour.city}">
                 <input name="tour[description]" type="text" placeholder="${tour.description}">
@@ -90,7 +90,6 @@ const onMyReservationsSuccess = function (response) {
              <p class="card-text">${tour.description}</p>
              <input name="tour[host]" type="text" placeholder="${tour.host}">
              <p>Date: ${tour.date}</p>
-             <button class="delete-tour btn-primary" id="delete-tour" data-id=${tour._id}>Delete</button>
              <button class="book-tour btn-primary">Book</button>
            </div>
          </div>

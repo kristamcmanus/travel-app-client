@@ -30,14 +30,24 @@ $(() => {
   $('#view-edit-delete').hide()
   $('#view-edit-delete').on('click', tourEvents.onViewAllToursBtn)
   $('#view-all-tours').hide()
-  $('#view-all-tours').on('click', tourEvents.onViewAllTours)
-  $('#view-all-tours').on('click', tourEvents.onViewAllToursBtn)
+  $('#view-all-tours-btn').on('click', tourEvents.onViewAllTours)
+  // $('#view-all-tours').on('click', tourEvents.onViewAllToursBtn)
   $('#view-all-tours-btn').on('click', tourEvents.onViewAllToursBtn)
+  // $(document).ready(function(){
+  //   $('#edit-tour-btn').click(function(){
+  //     $('.edit-tour').toggle(500)
+  //   })
+  // })
   // $('.edit-tour').hide()
   // $('#edit-tour-btn').hide()
   // $('#delete-tour').hide()
   // $('#edit-tour-btn').on('click', '.edit-tour', tourEvents.onEditTourBtn)
   $('#display-tours').on('click', '#edit-tour-btn', tourEvents.onEditTourBtn)
+  // $(document).ready(function(){
+  //   $('#edit-tour-btn').click(function(){
+  //     $('.edit-tour').toggle(500)
+  //   })
+  // })
   // $('#display-tour').on('click', tourEvents.onEditTourBtn)
   // $('.edit-tour').on('submit', tourEvents.onEditTour)
   // $('#display-tours').on('click', '.edit-tour', tourEvents.onEditTour)
